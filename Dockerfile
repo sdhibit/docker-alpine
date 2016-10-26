@@ -2,15 +2,14 @@ FROM alpine:3.4
 MAINTAINER Steve Hibit <sdhibit@gmail.com>
 
 # Add Repositories
-RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
 # Install runit & helpful packages
 RUN apk --update upgrade \
- && apk add \
+ && apk --no-cache add \
   curl \
-  runit@testing \
-  su-exec \
- && rm -rf /var/cache/apk/*
+  runit@community \
+  su-exec 
 
 ADD start_runit /sbin/
 
