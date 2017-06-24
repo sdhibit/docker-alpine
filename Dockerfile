@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.6
 MAINTAINER Steve Hibit <sdhibit@gmail.com>
 
 # Add Repositories
