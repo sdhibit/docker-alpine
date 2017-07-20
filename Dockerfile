@@ -1,14 +1,12 @@
-FROM alpine:3.6
+FROM frolvlad/alpine-glibc:alpine-3.6
 MAINTAINER Steve Hibit <sdhibit@gmail.com>
-
-# Add Repositories
-RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
 # Install runit & helpful packages
 RUN apk --update upgrade \
  && apk --no-cache add \
+  --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
   curl \
-  runit@community \
+  runit \
   su-exec 
 
 ADD start_runit /sbin/
