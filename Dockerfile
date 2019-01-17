@@ -1,8 +1,8 @@
-FROM alpine:3.7
+FROM alpine:3.8
 MAINTAINER Steve Hibit <sdhibit@gmail.com>
 
 # Add Repositories
-RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/v3.8/community" >> /etc/apk/repositories
 
 # Install runit & helpful packages
 RUN apk --update upgrade \
